@@ -60,7 +60,7 @@ console.log(arr5)
 const str2 = Array.from(str)
 console.log(str2)
 
-// เรื่อง destructuring
+// เรื่อง destructuring ขอ 15, 25 โดย 25 ขอให้ใช้ rest แล้วพิมพ์ type of ออกมา
 const [,,a,,...b] = [5, 10, 15, 20, 25]
 console.log(a)
 console.log(typeof a) //number 
