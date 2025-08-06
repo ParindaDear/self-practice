@@ -1,0 +1,9 @@
+สิ่งที่ได้เรียนรู้ใน week01 
+- array VS obj
+  same : เก็บหลายค่าได้ (เป็น collection)
+  diff : obj เก็บ key, value (ไม่มีลำดับ)
+         arr ไม่มี key, value แต่มี index ซึ่งช่วยให้ array มีลำดับ 
+- array เป็น obj คือเก็บ reference ที่ชี้ไป  ไม่ได้เก็บ collection ของ value
+
+
+เดี๋ยมาเขียนต่อ
