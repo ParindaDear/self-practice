@@ -36,3 +36,33 @@ for (let i=0; i<items.length; i++){
     console.log('Value:', items[i]);
     console.log('Type:', typeof items[i]);
 }
+
+// 8 Aug 2025
+/* 3. Create an array complexArray with the following items:
+"banana", 42, {language: 'JS', year: 1995}, ['HTML', 'CSS'], false, {details: {name: 'Dev', level: 2}}
+
+Then, loop through the array and print:
+Index:
+Value:
+Type: (use typeof)
+
+If the item is an object or array:
+For object: print number of keys
+For array: print its length
+*/
+
+let complexArray = ["banana", 42, {language: 'JS', year: 1995}, ['HTML', 'CSS'], false, {details: {name: 'Dev', level: 2}}];
+for (i=0; i < complexArray.length; i++){
+    //ที่จริงตรงนี้เราสามารถกำหนดค่าไว้ก่อนได้จะได้ง่ายต่อการเขียน(เป็นคำแนะนำจาก AI) const item = complexArray[i]; 
+    console.log('Index:', i);
+    console.log('Value', complexArray[i]);
+    console.log('Type', typeof(complexArray[i]));
+
+    if (typeof complexArray[i] === 'object'){
+        if (Array.isArray(complexArray[i])) {
+            console.log('length', complexArray[i].length);
+        } else {
+            console.log('Number of keys:', Object.keys(complexArray[i]).length);
+        }
+    }
+}
