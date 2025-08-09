@@ -13,6 +13,7 @@ for(let i=0; i<arr.length; i++){
     console.log(arr[i]);
 }
 
+console.log("=========================================================");
 
 /*2. Create an array items with the following elements:
     'apple'
@@ -36,6 +37,8 @@ for (let i=0; i<items.length; i++){
     console.log('Value:', items[i]);
     console.log('Type:', typeof items[i]);
 }
+
+console.log("=========================================================")
 
 // 8 Aug 2025
 /* 3. Create an array complexArray with the following items:
@@ -66,3 +69,52 @@ for (i=0; i < complexArray.length; i++){
         }
     }
 }
+
+console.log("=========================================================")
+
+// 9 Aug 2025
+/*4. Write a function that takes a sentence (string) and returns the first word in the sentence.
+If the input is undefined, null, or not a string → return an empty string "".
+If the input is an empty string → return "".
+Words are separated by spaces " " (no need to remove punctuation).
+If the sentence has only one word → return that word.
+Examples: firstWord("The quick brown fox") // "The"
+          firstWord(12345) // ""
+*/
+function firstWord(sentence) {
+    if (typeof sentence !== "string" || sentence.length === 0){
+        return "";
+    }
+    let words = sentence.split(" ");
+    return words[0]; //ไม่ต้องใช้ loop วนหาเพราะเราต้องการเเค่คำแรก
+}
+console.log(firstWord("The quick brown fox")); 
+console.log(firstWord(12345));   
+
+console.log("=========================================================")
+
+/*5. Write a function countVowels(sentence) that 
+counts how many vowels (a, e, i, o, u) appear in the sentence.
+Conditions:
+    -If the input is undefined, null, or not a string → return 0.
+    -Countboth lowercase and uppercase vowels.
+    -Ignore spaces, numbers, and punctuation — only letters matter.
+    -Return the total number of vowels found. 
+Examples: countVowels("The quick brown fox") // 5
+          countVowels("") // 0            */
+function countVowels(sentence) {
+    if (typeof sentence !== "string" || sentence.length === 0 ){
+        return 0;
+    }
+    let vowels = "aeiou";
+    let count = 0;
+    for (let i = 0; i < sentence.length; i++){
+        let char = sentence[i].toLowerCase(); //บรรทัดนี้ให้ AI ช่วยเพราะไม่รู้ว่าจะไปต่อยังไงดี ซึ่งมันอธิบายว่าตัวอักษรควรเช็กแบบไม่สนตัวพิมพ์ใหญ่/เล็ก เลยใช้ .toLowerCase()
+        if (vowels.includes(char)) { //บรรทัดนี้ให้ AI ช่วย .includes() เป็น method ของ String (และ Array) ใน JS ใช้สำหรับตรวจสอบว่ามีค่าที่เราต้องการอยู่ใน string หรือ array นั้น ๆ หรือไม่โดยถ้าเจอจะคืนค่า true ไม่เจอจะคืนค่า false
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countVowels("The quick brown fox")); 
+console.log(countVowels(""));
