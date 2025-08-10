@@ -118,3 +118,51 @@ function countVowels(sentence) {
 }
 console.log(countVowels("The quick brown fox")); 
 console.log(countVowels(""));
+
+console.log("=========================================================")
+
+// 10 Aug 2025 วันนี้จะเน้นโจทย์เกี่ยวกับ Destructuring
+/*6. Use array destructuring to get the first and third values from:
+     const colors = ["red", "green", "blue", "yellow"];
+*/
+const colors = ["red", "green", "blue", "yellow"];
+const [first, , third] = colors; //ใช้เครื่องหมาย , เพื่อข้ามตำแหน่งที่ไม่ต้องการ
+console.log(first);
+console.log(third);
+
+console.log("=========================================================")
+
+/*7. Use object destructuring to get name and age from:
+     const person = { name: "Alice", age: 25, city: "Bangkok" };
+*/
+const person = { name: "Alice", age: 25, city: "Bangkok" };
+const { name, age } = person;
+console.log(name);
+console.log(age);
+console.log("=========================================================")
+
+/*8. Use nested destructuring to get city from:
+    const user = {
+    id: 1,
+    info: {
+        name: "Bob",
+        address: {
+        city: "Chiang Mai",
+        zip: 50000
+        }
+    }
+    };
+*/
+const user = {
+  id: 1,
+  info: {
+    name: "Bob",
+    address: {
+      city: "Chiang Mai",
+      zip: 50000
+    }
+  }
+};
+const { info: { address: { city } } } = user;
+console.log(city);
+console.log("=========================================================")
