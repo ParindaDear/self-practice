@@ -3,8 +3,7 @@
   same : เก็บหลายค่าได้ (เป็น collection)
   diff : obj เก็บ key, value (ไม่มีลำดับ)
          arr ไม่มี key, value แต่มี index ซึ่งช่วยให้ array มีลำดับ 
-- array เป็น obj คือเก็บ reference ที่ชี้ไป  ไม่ได้เก็บ collection ของ value
-- ลำดับสุดท้ายของ array คือ n-1
+- Array คือ Object ที่เก็บตัวชี้(reference) ไปยังค่าต่างๆแทนที่จะเก็บค่าจริงๆไว้ในตัวมันเอง (Array เก็บที่อยู่ของข้อมูล ไม่ใช่เก็บข้อมูลจริงๆ)
 - Array สามารถเก็บ obj ได้
 
 - โครงสร้าง for loop (แบบ for i ดั้งเดิม)
@@ -12,7 +11,7 @@
       // code ที่จะให้ทำงาน
    }
 
-- การเขียน for loop มี 2 แบบ
+- การเขียน Array มี 4 แบบ
   1. แบบ literals
   2. แบบ spread operator (...)
      - มี 2 ความหมาย คือ spread, rest
@@ -20,6 +19,8 @@
        Spread -> {Set, map, string, array, Iterable obj} -> [กระจายออกมาเป็น element ย่อยๆ]
      - rest คือมีหลายอันแต่ต้องการรวม
        rest -> [element ย่อยๆ] -> [รวบรวมเป็น array ใหม่]
+  3. Array() constructor
+  4. The Array.of() and Array.from() factory methods
 
 - spread ใช้ทำอะไรกับ array
   ANS ใช้สร้าง  array แบบที่ต้องการโดย copy มาจาก array อื่น

@@ -165,4 +165,35 @@ const user = {
 };
 const { info: { address: { city } } } = user;
 console.log(city);
+
+console.log("=========================================================")
+
+// 11 Aug 2025
+/*9. You have the following data
+    const data = [
+    { id: 1, name: "Alice", skills: ["HTML", "CSS", "JS"] },
+    { id: 2, name: "Bob", skills: ["Python", "Django"] },
+    { id: 3, name: "Charlie", skills: ["Java", "Spring", "Hibernate"] }
+    ];
+- Extract the name of the second person.
+- Extract the first skill of the third person.
+- Extract the last skill of the first person.
+You must solve it using destructuring only — no manual indexing like data[1].name. */
+
+const data = [
+  { id: 1, name: "Alice", skills: ["HTML", "CSS", "JS"] },
+  { id: 2, name: "Bob", skills: ["Python", "Django"] },
+  { id: 3, name: "Charlie", skills: ["Java", "Spring", "Hibernate"] }
+];
+
+const [
+  { skills: [, , lastSkillFirstPerson] },
+  { name: secondName },
+  { skills: [firstSkillThirdPerson] }
+] = data;
+
+console.log(secondName);            
+console.log(firstSkillThirdPerson); 
+console.log(lastSkillFirstPerson);  
+
 console.log("=========================================================")
