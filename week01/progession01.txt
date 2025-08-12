@@ -11,14 +11,29 @@
       // code ที่จะให้ทำงาน
    }
 
+-  ตัวอย่างโครงสร้าง for loop (แบบ for...of)
+    const arr = [1,2,3];
+    for (const value of arr) {
+        console.log(value);
+    }
+
 - การเขียน Array มี 4 แบบ
   1. แบบ literals
   2. แบบ spread operator (...)
      - มี 2 ความหมาย คือ spread, rest
      - spread เอาไว้กระจายค่า
        Spread -> {Set, map, string, array, Iterable obj} -> [กระจายออกมาเป็น element ย่อยๆ]
+       เช่น 
+            let a = [1,2,3]
+            let b = [0, ...a, 4]
+            console.log(b);
      - rest คือมีหลายอันแต่ต้องการรวม
        rest -> [element ย่อยๆ] -> [รวบรวมเป็น array ใหม่]
+       เช่น โจทย์เขียนฟังก์ชัน sumAll ที่สามารถรับจำนวนตัวเลขได้ไม่จำกัดจำนวน argument และคืนค่าผลรวมของตัวเลขทั้งหมด
+            function sumAll(...numbers) {
+                return numbers.reduce((total, num) => total + num, 0);
+            }
+            console.log(sumAll(1,2,3,4));
   3. Array() constructor
   4. The Array.of() and Array.from() factory methods
 
