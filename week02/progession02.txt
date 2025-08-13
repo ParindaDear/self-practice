@@ -17,4 +17,13 @@ Object literals เขียนได้ดี เขียนได้ไว
 Object Constructor ข้อดีคือมันเริ่มเป็นลูกครึ่งละเขียนไม่ยากเหมือน class ไม่ต้อง repeat บ่อยๆให้ให้ new operator เลย
 ข้อเสียคือ
 
+ES6 Classes ถ้าต้องการสร้างหลาย object เเละสามารถใช้ function เดียวกันแชร์ด้วยกัน 
+
+Object.create() ยืมโครงสร้างเดิมสร้างโครงสร้างใหม่
+
 สอบ 5 week แรก Array, Obj, Func + Module ท้ายๆ (ทฤษฎี + ปฎิบัติ)
+
+
+How to Compare Objects in JavaScript
+การเช็คทำได้ 3 แบบ
+Obj เก็บ value อะไร ? 

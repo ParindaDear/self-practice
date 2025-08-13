@@ -121,4 +121,16 @@ console.log(dearlyStudent.first)
 console.log(dearlyStudent.last)
 console.log(dearlyStudent.age)
 dearlyStudent.studentId = 6713050020
-console.log(dearlyStudent)
+console.log(dear)
+
+
+// การ loop Object Literal
+const per3 = {firstName: "Parinda", lastName: "Lert", age: 20}
+//การเรียก value ทำได้ 2 แบบ
+console.log(per3.firstName) //เขียนการเรียก value เเบบ object.property
+console.log(per3["lastName"]) //เขียนการเรียก value เเบบ object["property"]
+// for...in
+for (const key in per3) {
+    console.log(key)
+    console.log(per1[key])
+}

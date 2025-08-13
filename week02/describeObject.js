@@ -46,3 +46,9 @@ const stu3 = { id: 1, name: "KiKi"};
 
 console.log(compareStudent(stu1, stu2));
 console.log(compareStudent(stu1, stu3));
+
+// Object Destructuring
+const em1 = {id: 1, name: "Somchai", address: { no: 111, city: "Bangkok" } }
+let { name : fullName, id } = em1
+console.log(fullName)
+console.log(id)
