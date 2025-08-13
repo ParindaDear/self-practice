@@ -1,0 +1,20 @@
+Practice 2 
+- อ.เขียนโจทย์ผิดนิดนึง เพราะไม่ควรมี 2 condition ในอันเดียวกัน 
+- Math.ceil()ใช้ปัดขึ้น 
+ 
+การ + มี 2 ความหมาย ดูจากตัว operand 
+    + เลข ต่อเมื่อทั้ง 2 ฝั่งเป็นเลข
+    + string ต่อเมื่อฝั่งใดผั่งนึงเป็นข้อความ
+
+Property names are usually Strings or can also be Symbols
+Symbol คือ unique key 
+ปล. string กับ symbols ไม่เหมือนกันนะ
+
+
+Object literals เขียนได้ดี เขียนได้ไว
+ข้อเสียคือถ้าสร้างหลายอันต้อง repeat code เอง
+
+Object Constructor ข้อดีคือมันเริ่มเป็นลูกครึ่งละเขียนไม่ยากเหมือน class ไม่ต้อง repeat บ่อยๆให้ให้ new operator เลย
+ข้อเสียคือ
+
+สอบ 5 week แรก Array, Obj, Func + Module ท้ายๆ (ทฤษฎี + ปฎิบัติ)
