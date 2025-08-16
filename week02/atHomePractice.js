@@ -47,3 +47,75 @@ delete student.grade;
 // 4.
 console.log("\n=== After Update ===");
 console.log(student);
+
+console.log("======================================================");
+/*Practice 2 — Student Scores
+Task: You have an object that stores students and their scores in different subjects: 
+  const students = {
+    Alice: { math: 90, english: 85, science: 92 },
+    Bob: { math: 75, english: 80, science: 78 },
+    Charlie: { math: 88, english: 95, science: 91 }
+  };
+1. Write a function printStudentScores(studentsObj) that prints each student's name and their scores in this format:
+  Alice:
+    math: 90
+    english: 85
+    science: 92
+2. Write a function calculateAverage(studentsObj) that calculates the average score for each student and returns a new object like:
+  {
+    Alice: 89,
+    Bob: 77.67,
+    Charlie: 91.33
+  }
+3. Add a new subject "history" to each student with a score of your choice.
+4. Delete the subject "science" for all students.
+5. Print the updated students object. */
+// Step 0: Original object
+const students = {
+  Alice: { math: 90, english: 85, science: 92 },
+  Bob: { math: 75, english: 80, science: 78 },
+  Charlie: { math: 88, english: 95, science: 91 }
+};
+
+// 1.
+function printStudentScores(studentsObj) {
+  for (const student in studentsObj) {
+    console.log(student + ":");
+    const subjects = studentsObj[student];
+    for (const subject in subjects) {
+      console.log("  " + subject + ": " + subjects[subject]);
+    }
+  }
+}
+printStudentScores(students);
+
+// 2.
+function calculateAverage(studentsObj) {
+  const averages = {};
+  for (const student in studentsObj) {
+    const subjects = studentsObj[student];
+    let total = 0;
+    let count = 0;
+    for (const score in subjects) {
+      total += subjects[score];
+      count++;
+    }
+    averages[student] = parseFloat((total / count).toFixed(2)); // round to 2 decimals
+  }
+  return averages;
+}
+console.log(calculateAverage(students));
+
+// 3.
+for (const student in students) {
+  students[student].history = 89; 
+}
+
+// 4.
+for (const student in students) {
+  delete students[student].science;
+}
+
+// 5.
+console.log("\nUpdated Students");
+printStudentScores(students);
