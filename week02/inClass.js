@@ -55,35 +55,49 @@ const me = new Person('Parinda','Lert', 20)
 const you = new Person('GiGi', 'Hadid', 30)
 console.log(me)  //Person { firstName: 'Parinda', lastName: 'Lert', age: 20 }
 console.log(you) //Person { firstName: 'GiGi', lastName: 'Hadid', age: 30 }
+console.log(you.firstName) //GiGi
+console.log(you.first) //undefined
 
 // การสร้าง obj แบบที่ 3 ES6 Classes ดีกว่าแบบ 2,1
 // เขียน class ที่มีอย่างน้อย 1 obj
 class Person1 {
     constructor(first, last, age){
-        this.first = first;
-        this.last = last;
+        this.firstName = first;
+        this.lastName = last;
         this.age = age;
     }
 }
 const jacky = new Person1('Jack', 'ky', 19)
 console.log(jacky); //Person1 { first: 'Jack', last: 'ky', age: 19 }
 
-//แบบที่ 4 Object.create()
-const jackyStudent = Object.create(jacky)
-console.log(jackyStudent.first)
-console.log(jackyStudent.last)
-console.log(jackyStudent.age)
-jackyStudent.studentId = 6713050020
-console.log(jackyStudent)
+//แบบที่ 4 Object.create(existing obj)
+//ให้เราลองสร้าง Student ที่มีโครงสร้างของ Person1
+const jackyStudent = Object.create(jacky) //ต้องอ้างชื่อ obj ที่มีอยู่
+console.log(jackyStudent.firstName) // Jack
+console.log(jackyStudent.lastName) // ky
+console.log(jackyStudent.age) // 19
+
+// เราสามารถเพิ่ม Property เข้าไปได้
+jackyStudent.studentId = 6713050020 
+console.log(jackyStudent) // Person1 { studentId: 6713050020 }
 
 
 // การ loop Object Literal
 const per3 = {firstName: "Parinda", lastName: "Lert", age: 20}
-//การเรียก value ทำได้ 2 แบบ
-console.log(per3.firstName) //เขียนการเรียก value เเบบ object.property
-console.log(per3["lastName"]) //เขียนการเรียก value เเบบ object["property"]
-// for...in
+console.log(per3.firstName) //Parinda
+console.log(per3["firstName"]) //Parinda
+
+
+// for...in ใช้สำหรับวน loop Object
 for (const key in per3) {
-    console.log(key)
-    console.log(per1[key])
+    console.log("1.", key) 
+    console.log("2.", per3[key])
+    console.log("3.", per3.key)
+    console.log("4.", per3["key"])
+
 }
+
+//การเรียก value ทำได้ 2 แบบ
+console.log(per3.firstName) //Parinda  //เขียนการเรียก value เเบบ object.property
+console.log(per3["lastName"]) //Lert  //เขียนการเรียก value เเบบ object["property"]
+

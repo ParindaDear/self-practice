@@ -1,29 +1,45 @@
 จากการทำ Practice 2 ได้รู้ว่า
 - Math.ceil() ใช้ปัดขึ้น 
 - Math.floor() ใช้ปัดลง
+
 เริ่มเรียนเรื่อง Object 
 - key ซ้ำได้ เเต่ก็ไม่ควร!!! เพราถ้า key ซ้ำมันจะเอา value ตัวสุดท้าย
+
 - การ + มี 2 ความหมาย ดูจากตัว operand 
     + เลข ต่อเมื่อทั้ง 2 ฝั่งเป็นเลข
     + string ต่อเมื่อฝั่งใดผั่งนึงเป็นข้อความ
+
 - Property names are usually Strings or can also be Symbols
     Symbol คือ unique key 
     ปล. string กับ symbols ไม่เหมือนกันนะ
+
 - JS เป็น implicit คือ ไม่ต้องประกาศ class ก่อนก็สร้าง object ได้
+
 - การสร้าง Object มี 4 วิธีหลักๆคือ
     1. Object literals 
         ข้อดีเขียนได้ดี เขียนได้ไว
-        ข้อเสียคือถ้าสร้างหลายอันต้อง repeat code เอง
+        ข้อเสียคือถ้าสร้างหลายอันต้อง repeat code เอง , ใช้ func เเชร์ระหว่าง obj ไม่ได้
     2. Object Constructor 
         ข้อดีคือมันเริ่มเป็นลูกครึ่งละเขียนไม่ยากเหมือน class ไม่ต้อง repeat บ่อยๆให้ให้ new operator เลย
-        ข้อเสียคือดูยากเพราะมันหน้าตาแอบคล้าย func ทั่วไป, การใช้ new บางทีอาจสับสน
-    3. ES6 Classes ถ้าต้องการสร้างหลาย object เเละสามารถใช้ function เดียวกันแชร์ด้วยกัน 
-
-Object.create() ยืมโครงสร้างเดิมสร้างโครงสร้างใหม่
+        ข้อเสียคือดูยากเพราะมันหน้าตาแอบคล้าย func ทั่วไป, การใช้ new บางทีอาจสับสน , ใช้ func เเชร์ระหว่าง obj ไม่ได้
+    3. ES6 Classes 
+        ข้อดีถ้าต้องการสร้างหลาย object เเละสามารถใช้ function เดียวกันแชร์ด้วยกัน 
+    4. Object.create() 
+        ยืมโครงสร้างเดิมสร้างโครงสร้างใหม่
+        ซึ่งเราสามารถเพิ่ม Property ใหม่เข้าไปได้
 
 สอบ 5 week แรก Array, Obj, Func + Module ท้ายๆ (ทฤษฎี + ปฎิบัติ)
 
+- for...in ใช้กับ Object 
+  for...of ใช้กับ Array 
 
-How to Compare Objects in JavaScript
-การเช็คทำได้ 3 แบบ
-Obj เก็บ value อะไร ? 
+- การเปรียบเทียบ Object มี 3 แบบ
+    1. Referential equality : ==, ===, Object.is()
+    2. Manual Comparison เราเขียน compare เอง ตามเงื่อนไขของโจทย์ ก็คือใช้ในตอนที่ทำแบบ1 ไม่ได้
+    3. Shallow Equality คือบางครั้ง Obj มัน Nested กันหลายชั้น เราจะเช็คเเค่ "1 ชั้น" ว่า key กับ value ต้องเท่า
+
+- สิ่งที่ได้เรียนรู้จากการทำโจทย์ Shallow Equality 
+    Shallow Equality มันคือการเปรียบเทียบ key และ value แค่ระดับเดียว ไม่ตรวจลึกถึง obj ที่ซ้อนด้านใน
+    การเช็คของมันคือตรวจความยาวของ key โดยถ้าเท่ากัน ถึงจะไปวน loop ตรวจทุก key ว่า value ตรงกันไหม
+    Object.keys(obj) ใช้ดึง key ของ obj ออกมาเป็น array
+
