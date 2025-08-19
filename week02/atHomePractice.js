@@ -119,3 +119,54 @@ for (const student in students) {
 // 5.
 console.log("\nUpdated Students");
 printStudentScores(students);
+console.log("======================================================");
+
+/* 
+You are given the following employee object:
+const employee = {
+  eid: "E12345",
+  profile: {
+    firstName: "Bob",
+    lastName: "Smith",
+    contact: {
+      email: "bob@example.com",
+      phone: "0898765432"
+    }
+  },
+  position: {
+    yearJoined: 2020,
+    department: "Engineering"
+  }
+}
+1. Use object destructuring to extract eid and store it in a variable called employeeId.
+2. Extract firstName and lastName from profile and store them in variables fname and lname.
+3. Extract email from contact and store it in a variable employeeEmail.
+4. Extract department from position and store it in a variable myDepartment.
+Finally, use console.log to print all variables.
+*/
+const employee = {
+  eid: "E12345",
+  profile: {
+    firstName: "Bob",
+    lastName: "Smith",
+    contact: {
+      email: "bob@example.com",
+      phone: "0898765432"
+    }
+  },
+  position: {
+    yearJoined: 2020,
+    department: "Engineering"
+  }
+}
+
+const { eid: employeeId } = employee;
+const { profile: { firstName: fname, lastName: lname } } = employee;
+const { profile: { contact: { email: employeeEmail } } } = employee;
+const { position: { department: myDepartment } } = employee;
+
+console.log(employeeId);     
+console.log(fname);         
+console.log(lname);          
+console.log(employeeEmail);  
+console.log(myDepartment);  
