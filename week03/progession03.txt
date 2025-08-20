@@ -1,0 +1,24 @@
+สิ่งที่ได้เรียนรู้จากโจทย์ Practice 2
+- reduce ใช้ยุบค่า 
+    โครงสร้างการเขียนคือ array.reduce((accumulator, currentValue) => { ... }, initialValue);
+        accumulator → ค่าที่สะสมไว้ (ในที่นี้คือ object ที่เก็บผลลัพธ์)
+        currentValue → ค่าที่วนมาในแต่ละรอบ (ในที่นี้คือคำ word)
+        initialValue → ค่าเริ่มต้นของ accumulator (เราให้ {} object ว่าง ๆ)
+อันนี้คือที่เพื่อนทำ คนที่ 1
+function getFreqOfWords(sentence) {
+  if (sentence == null) return undefined; 
+
+  return sentence.toLowerCase().split(" ")
+  .reduce((freq, word) => {  
+      freq[word] = (freq[word] || 0) + 1;     //freq[word] เป็นการอ้างถึง obj โดยใช้ [] ซึ่งที่มันใช้ . ไม่ได้เพราะอยู่ใน freq เลยต้องใช้ [] ที่เรียนไปสัปดาห์ที่เเล้วอ่ะ
+      return freq;
+    }, {});
+}
+
+เรื่อง function
+-ประกาศครั้งเดียวเรียกได้หลายครั้ง
+- function เป็น obj , array ก็เป็น obj, obj ก็เป็น obj
+- 
+
+
+ 
