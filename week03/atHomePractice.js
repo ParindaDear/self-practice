@@ -27,3 +27,25 @@ function isEven(n) {
 console.log(filterArray([1, 2, 3, 4, 5], isEven)); 
 console.log(filterArray(["apple", "banana", "kiwi"], word => word.length > 4)); 
 
+/* Pipe Function
+Write a function pipe(...fns) that takes multiple functions and returns a function.
+The returned function should apply the given functions from left to right.
+function add1(x) { return x + 1; }
+function double(x) { return x * 2; }
+function square(x) { return x * x; }
+const pipeline = pipe(add1, double, square);
+console.log(pipeline(2)); // 36  -> square(double(add1(2))) */
+
+function pipe(...fns) {
+    return function(initialValue) {
+        return fns.reduce((acc, fn) => fn(acc), initialValue);
+    }
+}
+
+function add1(x) { return x + 1; }
+function double(x) { return x * 2; }
+function square(x) { return x * x; }
+
+const pipeline = pipe(add1, double, square);
+
+console.log(pipeline(2)); 
