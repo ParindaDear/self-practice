@@ -49,3 +49,22 @@ function square(x) { return x * x; }
 const pipeline = pipe(add1, double, square);
 
 console.log(pipeline(2)); 
+
+/*Advanced Currying with Unlimited Arguments
+Write a function currySum() that allows chaining unlimited calls until an empty call () is made, then it returns the total sum.
+console.log(currySum(1)(2)(3)()); // 6
+console.log(currySum(5)(10)(2)(3)()); // 20
+*/
+function currySum(initial) {
+    let sum = initial || 0; // เก็บผลรวม
+    function inner(next) {
+        if (next === undefined) { 
+            return sum;
+        }
+        sum += next;   // + ค่าที่ส่งเข้ามา
+        return inner;  // คืน inner เพื่อให้สามารถเรียกต่อได้
+    }
+    return inner;
+}
+console.log(currySum(1)(2)(3)());      
+console.log(currySum(5)(10)(2)(3)());  
