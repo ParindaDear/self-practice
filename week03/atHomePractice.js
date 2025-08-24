@@ -67,4 +67,24 @@ function currySum(initial) {
     return inner;
 }
 console.log(currySum(1)(2)(3)());      
-console.log(currySum(5)(10)(2)(3)());  
+console.log(currySum(5)(10)(2)(3)());
+
+/*
+Write a function compose(...fns) that works like pipe, but applies functions from right to left.
+function add1(x) { return x + 1; }
+function double(x) { return x * 2; }
+function square(x) { return x * x; }
+const composed = compose(square, double, add1);
+console.log(composed(2)); // 36  (square(double(add1(2))))
+*/
+function compose(...fns) {
+  return function(initialValue) {
+    return fns.reduceRight((acc, fn) => fn(acc), initialValue);
+  };
+}
+function add1(x) { return x + 1; }
+function double(x) { return x * 2; }
+function square(x) { return x * x; }
+
+const composed = compose(square, double, add1);
+console.log(composed(2)); 
