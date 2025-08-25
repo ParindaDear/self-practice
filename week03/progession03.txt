@@ -18,7 +18,21 @@ function getFreqOfWords(sentence) {
 เรื่อง function
 -ประกาศครั้งเดียวเรียกได้หลายครั้ง
 - function เป็น obj , array ก็เป็น obj, obj ก็เป็น obj
-- 
+- Closure คือความสามารถของ inner function จำค่าใน outer แม้ว่า outer ถูกเรียกไปแล้ว
+  ทำไมถึงใช้ closure?
+  เก็บ state ของตัวแปร count ไว้โดยไม่ต้องประกาศ global
+- HOF = ฟังก์ชันที่ รับฟังก์ชันเป็น input หรือ ส่งฟังก์ชันออกมาเป็น output
+  ทำให้โค้ด ยืดหยุ่น และ นำกลับมาใช้ซ้ำ ได้ง่ายขึ้น
+  ใช้บ่อยมากใน JavaScript เช่น map, filter, reduce
+- Function Expressions คือ สร้างฟังก์ชันแล้วเก็บไว้ในตัวแปร (assign ให้กับ variable)
+  เช่น 
+    const sayHello = function() {
+      console.log("Hello");
+    };
+  เทียบกับการเขียน Func Declaration ธรรมดา 
+    function sayHello() {
+      console.log("Hello");
+    }
+  ปล.เรา Hoisting ใน Function Expression ไม่ได้
 
 
- 
