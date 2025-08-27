@@ -1,0 +1,18 @@
+mdn javascript เปิดได้ตอนสอบ
+
+filter 
+- filter ไม่ได้เปลี่ยน original array
+  เพื่อให้ผลลัพธ์มันออกมาได้เลยต้องเลือกระหว่างจะเก็บมันไว้ในตัวเปร / ครอบ console.log ไปเลย 
+- วิธี 1. annonymous arrow function
+  วิธี 2. annonymous function declaration
+    สรุป
+    ทั้งสองวิธีคือการส่ง callback function ให้ filter() ใช้ตรวจสอบสมาชิกของ array
+    ต่างกันตรง syntax:
+    Arrow function → เขียนสั้น กระชับ เหมาะกับ callback ที่สั้น ๆ
+    Function expression → ใช้ function keyword อาจเขียนยาวกว่า แต่บางทีจำเป็นถ้าต้องใช้ this ภายใน function*/
+
+- forEach() ใช้วนซ้ำแต่ละ element, ไม่คืนค่า
+- map() ใช้แปลงแต่ละ element แล้วคืน array ใหม่
+        อีกหน้าที่คือเอาไว้เลือก property ที่ต้องการใน obj
+- find() คืน element ตัวแรก ที่ตรงเงื่อนไข
+- findIndex() คืน index ของ element ตัวแรก ที่ตรงเงื่อนไข
