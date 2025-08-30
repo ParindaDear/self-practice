@@ -73,6 +73,9 @@ console.log(jacky); //Person1 { first: 'Jack', last: 'ky', age: 19 }
 //แบบที่ 4 Object.create(existing obj)
 //ให้เราลองสร้าง Student ที่มีโครงสร้างของ Person1
 const jackyStudent = Object.create(jacky) //ต้องอ้างชื่อ obj ที่มีอยู่
+//jackyStudent ไม่มี property firstName, lastName, age ของตัวเอง
+//แต่ inherit มาจาก jacky (prototype chain)
+
 console.log(jackyStudent.firstName) // Jack
 console.log(jackyStudent.lastName) // ky
 console.log(jackyStudent.age) // 19
@@ -80,12 +83,13 @@ console.log(jackyStudent.age) // 19
 // เราสามารถเพิ่ม Property เข้าไปได้
 jackyStudent.studentId = 6713050020 
 console.log(jackyStudent) // Person1 { studentId: 6713050020 }
-
+//พอเพิ่ม studentId → กลายเป็น property ของ object jackyStudent เอง
 
 // การ loop Object Literal
 const per3 = {firstName: "Parinda", lastName: "Lert", age: 20}
 console.log(per3.firstName) //Parinda
 console.log(per3["firstName"]) //Parinda
+//console.log(per3[firstName]) //error ห้ามทำ
 
 
 // for...in ใช้สำหรับวน loop Object

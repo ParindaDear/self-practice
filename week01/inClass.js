@@ -62,7 +62,7 @@ console.log(str2)
 
 // เรื่อง destructuring ขอ 15, 25 โดย 25 ขอให้ใช้ rest แล้วพิมพ์ type of ออกมา
 const [,,a,,...b] = [5, 10, 15, 20, 25]
-console.log(a)
+console.log(a) // 15
 console.log(typeof a) //number 
-console.log(b)
+console.log(b) // [ 25 ] เพราะใช้ spread ผลเลยเป็น arr
 console.log(typeof b)//object (array)
