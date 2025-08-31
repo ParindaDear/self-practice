@@ -10,32 +10,35 @@ const words = ["apple", "Mango", "orange", "Banana"]
 
 // 💌 การเขียน callback function
 // ปล word เป็น parameter   word จะมีกี่อันก็เเล้วเเต่ว่ามีเข้ามากี่อัน
-// วิธี 1. annonymous arrow function  (ใช้ครั้งเดียวทิ้ง)
-// const startAWords = words.filter( word => word.startsWith('a') ) //เขียน annonymous function แบบ arrow func
-// ปล. ที่เขียน const startAWords เพื่อให้ผลลัพธ์มันออกมาได้เลยต้องเลือกระหว่างจะเก็บมันไว้ในตัวเปร / ครอบ console.log ไปเลย เพราะ filter ไม่ได้เปลี่ยน original array
-// console.log(startAWords); //[ 'apple' ]
 
-//วิธี 2. annonymous function declaration (ใช้ครั้งเดียวทิ้ง)
+//วิธี 1. annonymous function declaration (ใช้ครั้งเดียวทิ้ง)
 const startAWords1 = words.filter(function (word) {
     return word.startsWith("a")
 })
 console.log(startAWords1); //[ 'apple' ]
 
-//วิธี 3. named arrow function  (เเบบนี้เรียกมันกลับมาใช้ซ้ำได้อีก)
-const checkStartA = (word) => word.startsWith("a")
-const startAWords2 = words.filter(checkStartA)
-console.log(startAWords2) //[ 'apple' ]
+// วิธี 2. annonymous arrow function  (ใช้ครั้งเดียวทิ้ง)
+// const startAWords = words.filter( word => word.startsWith('a') ) //เขียน annonymous function แบบ arrow func
+// ปล. ที่เขียน const startAWords เพื่อให้ผลลัพธ์มันออกมาได้เลยต้องเลือกระหว่างจะเก็บมันไว้ในตัวเปร / ครอบ console.log ไปเลย เพราะ filter ไม่ได้เปลี่ยน original array
+// console.log(startAWords); //[ 'apple' ]
 
-//วิธี 4. named function declaration (เเบบนี้เรียกมันกลับมาใช้ซ้ำได้อีก)
+//วิธี 3. named function declaration (เเบบนี้เรียกมันกลับมาใช้ซ้ำได้อีก)
 function checkStartA2(word) {
     return word.startsWith("a")
 }
 const startAWords3 = words.filter(checkStartA2)
 console.log(startAWords3) //[ 'apple' ]
 
+//วิธี 4. named arrow function  (เเบบนี้เรียกมันกลับมาใช้ซ้ำได้อีก)
+const checkStartA = (word) => word.startsWith("a")
+const startAWords2 = words.filter(checkStartA)
+console.log(startAWords2) //[ 'apple' ]
+
+
+
 
 // 💌 forEach()
-// จากก่อนหน้านี้ที่เราเขียน callback function วิธี 1. annonymous arrow function 
+// จากก่อนหน้านี้ที่เราเขียน callback function วิธี 2. annonymous arrow function 
 // ให้เราเเปลงเป็นการเขียนแบบใช้ forEach
 const startAWords = []; //เพราะ forEach มันไม่ return เลยเลยต้องสร้างเก็บค่าไว้
 words.forEach(word => {
@@ -141,7 +144,5 @@ console.log(words1.slice(2)) // ["banana", "mango", "cherry"]
 console.log(words1.slice(-3)) // ["banana", "mango", "cherry"]
 
 
-//💌 fill
- 
 
  

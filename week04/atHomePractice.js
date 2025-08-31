@@ -85,3 +85,13 @@ const totalPrice = uppercased.reduce((sum, item) => sum + item.price, 0);
 
 console.log(uppercased);
 console.log("Total Price:", totalPrice);
+console.log ("========================================")      
+
+/*โจทย์ ให้ array ซ้อนกัน:
+const arr = [[1, 2], [3, 4], [5, 6]];
+ใช้ reduce() แปลงให้เป็น array เดียว: [1, 2, 3, 4, 5, 6] */
+const arr = [[1, 2], [3, 4], [5, 6]];
+const merged = arr.reduce((acc, cur) => acc.concat(cur), []);
+console.log(merged);
+console.log ("========================================")      
+

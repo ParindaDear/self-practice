@@ -1,5 +1,14 @@
 mdn javascript เปิดได้ตอนสอบ
 
+การเขียน callback function
+  1. annonymous arrow function  (ใช้ครั้งเดียวทิ้ง)
+     const startAWords = words.filter( word => word.startsWith('a') ) //เขียน annonymous function แบบ arrow func
+     ปล. ที่เขียน const startAWords เพื่อให้ผลลัพธ์มันออกมาได้เลยต้องเลือกระหว่างจะเก็บมันไว้ในตัวเปร / ครอบ console.log ไปเลย เพราะ filter ไม่ได้เปลี่ยน original array
+     console.log(startAWords); //[ 'apple' ]
+  2. annonymous function declaration (ใช้ครั้งเดียวทิ้ง)
+  3. named arrow function  (เเบบนี้เรียกมันกลับมาใช้ซ้ำได้อีก)
+  4. named function declaration (เเบบนี้เรียกมันกลับมาใช้ซ้ำได้อีก)
+  
 filter 
 - filter ไม่ได้เปลี่ยน original array
   เพื่อให้ผลลัพธ์มันออกมาได้เลยต้องเลือกระหว่างจะเก็บมันไว้ในตัวเปร / ครอบ console.log ไปเลย 

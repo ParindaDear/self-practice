@@ -7,19 +7,21 @@ Output
     // { do: 2, you: 1, best: 1, just: 1, it: 1 }
     console.log(getFreqOfWords(null)) //undefined
     console.log(getFreqOfWords(undefined)) //undefined */
-
 function getFreqOfWords(sentence) {
     if(sentence === null || sentence === undefined){
-        return undefined;
+        return undefined
     }
-    const words = sentence.toLowerCase().split(" ") //split ใช้เเยก string เป็น array โดยใช้ช่องว่างเเยก
+    const words = sentence.toLowerCase().split(" ")  //split ใช้เเยก string เป็น array โดยใช้ช่องว่างเเยก
     const freq = {}
     for (let word of words){ //ต้องใช้ for of เพราะเอาไว้สำหรับ วนค่าของสมาชิกใน array โดยตรง ใช้ for in ไม่ได้
-        if (word) {
-            freq[word] = (freq[word] || 0) + 1;
+        if (freq[word] === undefined) {
+            freq[word] = 1; //เจอครั้งเเรก ก็คือทุกตัวต้องเจออยู่เเล้วไง
+        } else {
+            freq[word] += 1; //เจอเเล้ว เพิ่มอีก1
         }
     }
     return freq
+    
 }
 
 console.log(getFreqOfWords('Today is present and present is your gift'))
