@@ -95,3 +95,16 @@ const merged = arr.reduce((acc, cur) => acc.concat(cur), []);
 console.log(merged);
 console.log ("========================================")      
 
+/*ให้ array: const number = [3, 7, 10, 12, 15, 20, 25];
+Task:
+  กรองเอาเฉพาะเลขที่หาร 5 ลงตัว
+  คูณเลขที่เหลือทุกตัวด้วย 2
+  หาผลรวมของตัวเลขทั้งหมด */
+const number = [3, 7, 10, 12, 15, 20, 25];
+
+const result = number
+  .filter(n => n % 5 === 0)  
+  .map(n => n * 2)            
+  .reduce((sum, n) => sum + n, 0);  
+console.log(result);
+console.log ("========================================")      
