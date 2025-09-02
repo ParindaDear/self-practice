@@ -108,3 +108,21 @@ const result = number
   .reduce((sum, n) => sum + n, 0);  
 console.log(result);
 console.log ("========================================")      
+
+/* คุณมี array ของนักเรียน แต่ละคนมี คะแนนสอบ 3 วิชา
+const students1 = [
+  { name: "Alice", math: 80, english: 70, science: 90 },
+  { name: "Bob", math: 60, english: 75, science: 85 },
+  { name: "Charlie", math: 90, english: 95, science: 100 },
+];
+คุณต้องหา คะแนนรวมของนักเรียนทุกคน และบวก โบนัส 5% ให้กับแต่ละคน*/
+const students1 = [
+  { name: "Alice", math: 80, english: 70, science: 90 },
+  { name: "Bob", math: 60, english: 75, science: 85 },
+  { name: "Charlie", math: 90, english: 95, science: 100 },
+];
+const totalScore = students1.reduce(
+  (total, student) => total + (student.math + student.english + student.science) * 1.05, 0
+);
+
+console.log(totalScore); 
