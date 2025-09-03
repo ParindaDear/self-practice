@@ -1,0 +1,55 @@
+โจทย์เเบบไหนถึงใช้ map ?
+Ans เมื่อต้องการเเปลงค่าทุกค่าใน araray  เเละมันยังใช้ได้ตอนเมื่อต้องการดึง property บางอัน
+
+Array.isArray() เป็นตัวไว้เช็คว่า input ที่รับเข้ามามันเป็น array มั้ย
+
+merge array
+วิธี 1 spread
+วิธี 2 concat
+
+เปลี่ยน array เป็น string
+วีธีใช้ toString() 
+วีธีใช้ join() 
+
+includes()ที่ใช้กับ array VS includes()ที่ใช้กับ string ต่างกันไง ?
+- includes ของ String จะเเค่บางส่วน
+- includes ของ Array จะทั้ง items ห้ามส่วนนึงของ item
+
+reverse มันเเก้ original array ด้วย 
+
+sort โดย default sort มันเป็น sort แบบ text & เป็น case sensitive
+มันไม่ได้ sort numberic
+sort มันจะทำการเปรียบเทียบ -1 ,0 ,1
+
+localeCompare เป็น   method ของ string มันเป็นการเปรียบเทียบ string ตามภาษาท้องถิ่น ตามที่เราจะระบุ parameter โดยมันจะ default เป็น Eng
+โดย localeCompare มันเป็น case-insensitive (ไม่สน case)
+มันจะเปรียบเทียบ string ตามตัวอักษร case-insensitive ได้ถ้าต้องการ
+
+findIndex() ต่างกับ indexOf() ยังไง (ใช้อันไหนก็ได้)
+- indexOf() จะ return first index ของ element ที่ให้ไว้ โดยถ้าไม่เจอจะ -1
+  มันต้องการ parameter ที่เป็น string
+- findIndex() ไว้หา index ของ first element
+  parameter มันต้องการ callback func ที่ทำหน้าที่ให้ condition
+- ความเหมือนคือ output  เเต่ความต่างคือ input parameter 
+
+
+Tree Shaking คือ remove code ที่เราไม่ได้ใช้ออก 
+โดยจะดูความผูกพันธ์ตรง module import, export 
+การประกาศมี 2 ระดับคือ 
+1. Global คือทุก file สามารถอ้างถึง module / file นี้ได้ โดยไม่ต้อง import 
+2. Local อ้างไว้ที่ไหนใช้ได้ที่นั่น ไฟล์อื่นใช้ไม่ได้ (ทำให้ Tree Shaking ดีสุด) จะใช้ไฟล์ไหนต้อง import เพราะถ้าอันไหนไม่มี import มันจะลบทิ้งทั้งหมด
+
+๋JS Module มี 2 syntax
+- CommonJs ใช้ syntax ของ Node.js 
+- ES Modules ใช้กับ browser 
+- เเต่ปัจจุบันมีตัวช่วยละว่าจะข้าม syntax ต้องทำไงโดยเปลี่ยนนามสกุลจาก .js เป็น .mjs ทำให้ไม่ต้องเปลี่ยน syntax ไปมา
+
+Export By Item 
+ข้อดี - เลือกอันไหนก็จิ้มเลยว่า unit นั้นโดน export
+ข้อเสีย - ถ้าไฟล์ใหญ่จะดูยาก 
+
+Export By List
+ข้อดี - เห็นภาพรวม ง่าย
+ข้อเสีย - ไม่เห็น by item
+
+ขาออกตอน export เปลี่ยนชื่อได้
