@@ -13,4 +13,4 @@ class Book {
   }
 }
 
-export { echo, getLength as default, GPAAverage, Book as BookManagement }
+export { getLength as default, GPAAverage, Book as BookManagement }
