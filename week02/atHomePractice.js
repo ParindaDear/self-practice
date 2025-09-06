@@ -170,3 +170,19 @@ console.log(fname);
 console.log(lname);          
 console.log(employeeEmail);  
 console.log(myDepartment);  
+console.log("======================================================");
+
+/*จงเขียน func ที่รวม obj 2 อันนี้เข้าด้วยกันให้เหลือ obj ตัวเดียว
+const obj1 = { foo: 'bar', x: 42 }
+const obj2 = { foo: 'baz', y: 13 }
+*/
+const obj1 = { foo: 'bar', x: 42 }
+const obj2 = { foo: 'baz', y: 13 }
+
+function mergeObject(object1, object2){
+    let newObject = {...object1, ...object2}
+    return newObject
+}
+
+console.log(mergeObject(obj1, obj2)) // { foo: 'baz', x: 42, y: 13 }
+//ผลเป็นแบบนี้เพราะ ตามหลักการ spread operator (...) เวลามี key ซ้ำ (foo) ค่าของ object2 จะทับค่าของ object1

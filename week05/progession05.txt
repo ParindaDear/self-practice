@@ -36,7 +36,8 @@ Tree Shaking คือ remove code ที่เราไม่ได้ใช้
 โดยจะดูความผูกพันธ์ตรง module import, export 
 การประกาศมี 2 ระดับคือ 
 1. Global คือทุก file สามารถอ้างถึง module / file นี้ได้ โดยไม่ต้อง import 
-2. Local อ้างไว้ที่ไหนใช้ได้ที่นั่น ไฟล์อื่นใช้ไม่ได้ (ทำให้ Tree Shaking ดีสุด) จะใช้ไฟล์ไหนต้อง import เพราะถ้าอันไหนไม่มี import มันจะลบทิ้งทั้งหมด
+2. Local อ้างไว้ที่ไหนใช้ได้ที่นั่น ไฟล์อื่นใช้ไม่ได้ (ทำให้ Tree Shaking ดีสุด) 
+   จะใช้ไฟล์ไหนต้อง import เพราะถ้าอันไหนไม่มี import มันจะลบทิ้งทั้งหมด
 
 ๋JS Module มี 2 syntax
 - CommonJs ใช้ syntax ของ Node.js 

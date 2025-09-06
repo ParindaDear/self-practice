@@ -66,3 +66,67 @@ const totalPrice = sorted.reduce((sum, p) => sum + p.price, 0);
 console.log("Products after filter & uppercase & sort by category:", sorted);
 console.log("Array of product names:", productNames);
 console.log("Total price:", totalPrice);
+console.log("====================================================")
+
+
+/* Challenge: Student Management with indexOf vs findIndex
+ให้ array ของนักเรียน:
+const students = [
+  { id: 101, name: "Alice", scores: [80, 90, 85] },
+  { id: 102, name: "Bob", scores: [60, 70, 75] },
+  { id: 103, name: "Charlie", scores: [88, 92, 95] },
+  { id: 104, name: "Dana", scores: [50, 40, 55] }
+];
+Task:
+1. ใช้ map ดึง เฉพาะชื่อ ออกมาเป็น array ของ string เช่น ["Alice", "Bob", "Charlie", "Dana"]
+แล้วใช้ indexOf("Charlie") หา index ของ "Charlie"
+2. ใช้ findIndex() หา index ของ student ที่มี average score < 60 (คือคนที่สอบตก)
+3. ใช้ findIndex() หา index ของ student ที่ id === 103 แล้ว update ชื่อจาก "Charlie" → "Charles"
+4. ถ้า search ไม่เจอ (เช่นหา "Eve") ให้ return -1 เหมือนกัน
+
+How to test 
+console.log("Index of 'Charlie' using indexOf:", idxCharlie);  
+console.log("Index of first student with avg score < 60:", idxFail);
+console.log("Updated students:", students);
+console.log("Index of 'Eve':", idxEve);
+
+Expected Output
+Index of 'Charlie' using indexOf: 2
+Index of first student with avg score < 60: 3
+Updated students: [
+  { id: 101, name: 'Alice', scores: [ 80, 90, 85 ] },
+  { id: 102, name: 'Bob', scores: [ 60, 70, 75 ] },
+  { id: 103, name: 'Charles', scores: [ 88, 92, 95 ] },
+  { id: 104, name: 'Dana', scores: [ 50, 40, 55 ] }
+]
+Index of 'Eve': -1
+
+*/
+const students = [
+  { id: 101, name: "Alice", scores: [80, 90, 85] },
+  { id: 102, name: "Bob", scores: [60, 70, 75] },
+  { id: 103, name: "Charlie", scores: [88, 92, 95] },
+  { id: 104, name: "Dana", scores: [50, 40, 55] }
+];
+//1
+const names = students.map(s => s.name);
+const idxCharlie = names.indexOf("Charlie");
+console.log("Index of 'Charlie' using indexOf:", idxCharlie);
+
+// 2. 
+const idxFail = students.findIndex(s => {
+  const avg = s.scores.reduce((sum, sc) => sum + sc, 0) / s.scores.length;
+  return avg < 60;
+});
+console.log("Index of first student with avg score < 60:", idxFail);
+
+// 3. 
+const idxCharlieId = students.findIndex(s => s.id === 103);
+if (idxCharlieId !== -1) {
+  students[idxCharlieId].name = "Charles";
+}
+console.log("Updated students:", students);
+
+// 4. 
+const idxEve = names.indexOf("Eve");
+console.log("Index of 'Eve':", idxEve);
